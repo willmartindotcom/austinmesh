@@ -34,27 +34,31 @@
 		<h1>Austin Mesh</h1>
 	</header>
 	<main>
-<p>Austin Mesh is a community group working to build a mesh network of solar-powered <a href="https://meshtastic.org/">meshtastic</a> radios in Austin. This network acts like a city-wide text messaging system. This allows people to send unencrypted group text messages to everyone on the network. Users can also send encrypted messages to any specific member. All of this happens without any external infrastructure - no power, no cell phone towers, no internet.</p>
+<p>Austin Mesh is a community group working to build a mesh network of solar-powered <a href="https://meshtastic.org/">meshtastic</a> radios in Austin.
+This network acts like a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network.
+All of this happens without any external infrastructure - no power, no cell phone towers, no internet.</p>
 
 <h3> How does it work? </h3>
-<p>We have set up a number of solar-powered radio repeaters in Austin. These radios communicate at <a href="https://en.wikipedia.org/wiki/33-centimeter_band">900 MHZ</a> using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>. The radios mesh using the open-source software <a href="https://meshtastic.org/">meshtastic</a>.</p>
+<p>We have set up a number of solar-powered radio repeaters in Austin. These radios communicate at <a href="https://en.wikipedia.org/wiki/33-centimeter_band">900 MHZ</a> using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>.
+The radios mesh using the open-source software <a href="https://meshtastic.org/">meshtastic</a>.</p>
+Users can connect to these repeaters by Bluetooth if they’re close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.
 <br>
 
 </p>		
 <h3> What can it do? </h3>
-<p>Meshtastic is a bit like a decentralized social media platform.
+<p>Meshtastic is a bit like a decentralized social media platform or SMS app. It has a number of different features which are similar to anyone who has sent a text message or posted on social media.
 <br>
-1) Primary Channel: You can broadcast an unencrypted message on to the Primary Channel and everyone on your mesh will see it. This is a bit like “posting” on a social media platform.
+<b>1) Primary Channel: </b> You can broadcast an unencrypted message on to the Primary Channel and everyone on your mesh will see it. This is a bit like “posting” on a social media platform.
 <br>
-2) Group Channels: You can send an encrypted message to a select group of people on a Secondary Channel and everyone who is subscribed to that channel will get it. People can join the channel if you provide them with a an encryption key which you can send to them via Direct Message or which they can scan from a QR code in person. This is a bit like a private group on social media, or a group text message chain on SMS.
+<b>2) Group Channels: </b> You can send an encrypted message to a select group of people on a Secondary Channel and everyone who is subscribed to that channel will get it. People can join the channel if you provide them with a an encryption key which you can send to them via Direct Message or which they can scan from a QR code in person. This is a bit like a private group on social media, or a group text message chain on SMS.
 <br>
-3) Direct Messages: You can send encrypted direct messages to people on the mesh. This is like a private text message or a DM on social medial.
+<b>3) Direct Messages: </b> You can send encrypted direct messages to people on the mesh. This is like a private text message or a DM on social medial.
 <br>
-4) Location: If you choose to enable it you can send your location to the mesh and it will show up on everyone’s map in the app. 
+<b>4) Location: </b> If you choose to enable it you can send your location to the mesh and it will show up on everyone’s map in the app. 
 <br>
-5) Connect worldwide: If anyone on your local mesh is running an MQTT gateway your local mesh will connect to the other meshes around the world. This can allow you to broadcast messages to everyone globally or send encrypted messages to groups or individuals worldwide.
+<b>5) Connect worldwide: </b> If anyone on your local mesh is running an MQTT gateway your local mesh will connect to the other meshes around the world. This can allow you to broadcast messages to everyone globally or send encrypted messages to groups or individuals worldwide.
 <br>
-6) Send telemetry data: Nodes can be set up to send telemetry data like the battery status (which is helpful for monitoring remote-solar powered nodes). Nodes can also have “modules” connected like humidity, temperature, air pressure sensors which allow them to act like weather stations.
+<b>6) Send telemetry data: </b> Nodes can be set up to send telemetry data like the battery status or signal strength.; this is helpful for monitoring remote solar-powered nodes. Nodes can also have sensors connected to them which allow them to send data on temperature, humidity, or air pressure which allow them to act like weather stations.
 <br>
 </p>
 
@@ -68,19 +72,19 @@ Then those three people re-write the message three times and hand it to the thre
 Now imagine a big gust of wind comes and blows away some of the messages.
 If even just a few people saw the note and keep copying and re-sending it, eventually everyone will get a copy of the note.
 This is like sending and unencrypted message to everyone on the network.
-<br>
+<br><br>
 Now imagine you want to send a message to a single person or a select group of people but you don't want other people who see the note to be able to read it.
 You could write the note using a secret language. You could then hand a decoder key to your friend or to a group of friends and they could decode the message.
 The message still gets passed the same way - with every single person writing the message a few times and handing it to everyone - but only those people with the decoder key will be able to understand the message.
 This is like sending an encrypted direct message or encrypted group message.
-<br>
+<br><br>
 Austin Mesh works the same way as this paper example, but instead of sending paper notes we're using digital text messages and sending it with radio waves.
 Our radios are solar powered and they don’t need any internet or cell phone coverage. This means they will work even if the power is out.
 <br>
 
 <h3>Why build this network?</h3>
-<p>1) Community: Because this is essentially a city-wide group text message chain we are hoping people use the network to build community. Tell the group where your band is playing tonight, chat about local politics, ask for a good cheese dip recipe, etc. <br><br>
-2) Disasters: If the power goes out, like during the 2021 Winter Storm Uri, this network should allow people to continue to communicate with each other without electricity, cell phone coverage, or internet. This big city-wide group text chain could allow people to ask for help or offer assistance. People could get information about where warming centers are open or ask who in their neighborhood still has power. People could also send encrypted direct messages to check in on friends and family or they could send encrypted group messages to coordiante privately in a group.<br><br>
+<p>1) Community: Because this is essentially a city-wide group text message chain we are hoping people use the network to build community. Tell the group where your band is playing tonight, chat about local politics, ask for a good cheese dip recipe, etc. <br>
+2) Disasters: If the power goes out, like during the 2021 Winter Storm Uri, this network should allow people to continue to communicate with each other without electricity, cell phone coverage, or internet. This big city-wide group text chain could allow people to ask for help or offer assistance. People could get information about where warming centers are open or ask who in their neighborhood still has power. People could also send encrypted direct messages to check in on friends and family or they could send encrypted group messages to coordiante privately in a group.<br>
 3) Decentralized, Open, and Resilient: Austin Mesh is decentralized - there is no central server or corporation - all the communication bounces through the entire mesh. Austin Mesh is open to everyone - you don't have to ask permission to join and all of the software is open-source. Austin Mesh is resilient - our solar-powered radios don't need cell phone towers, internet access, or electricity. We hope this project will inspire others to build things that are decentralized, open, and resilient.</p>
 
 <h3>How can I join the network?</h3>
@@ -96,17 +100,16 @@ If you can afford it, we recommend you buy a pre-built solar-powered node for ab
 <br>
 4) Open the Meshtastic app and say hi!
 <br></p>
-
-<h3>What kind of coverage does the mesh network have?</h3>
-As of Spring 2023 we have coverage throughout most of downtown and central Austin. We're actively working to expand this coverage.
-<br><img src="coverage.jpg" alt="Austin Mesh Coverage Map">
-		
 <h3>How I can join the group?</h3>
 <p>You can <a href="mailto:info@austinmesh.org">email us</a> to become an official member and attend our in-person meetings in Austin. You can also follow us on <a href="https://twitter.com/AustinMeshOrg">Twitter</a>, 
 <a href="https://www.instagram.com/p/Cq0jOpYLpZy/">Instagram</a>, 
 <a href="https://www.tiktok.com/@austinmesh.org">TikTok</a>, 
 and <a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA">YouTube</a>.</p>
 
+<h3>What kind of coverage does the mesh network have?</h3>
+<p>As of Spring 2023 we have coverage throughout most of downtown and central Austin. We're actively working to expand this coverage.
+<br><img src="coverage.jpg" alt="Austin Mesh Coverage Map"></p>
+		
 <h3>Meshtastic Friday</h3>
 <p>Austin Mesh created a weekly check-in called Meshtastic Friday. Join us every Friday for the weekly check in.
 <br><br>
@@ -119,10 +122,10 @@ and <a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA">YouTube</a>.<
 <b>Who:</b> All Meshtastic users anywhere on earth!
 <br><br>
 <b>Why:</b> Increase Meshtastic adoption by using it regularly. Stress test the network to improve it. Improve your familiarity with Meshtastic. Meet like-minded people from around the world.
-<br><br></p>
-<br><img src="meshtasticfriday.PNG" alt="Meshtastic Friday"></p>
-<br>
-		
+<br><br>
+<br><img src="meshtasticfriday.PNG" alt="Meshtastic Friday">
+<br></p>
+	
 <p>This site is (c) by Will Martin and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
 
 	</main>
