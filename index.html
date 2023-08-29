@@ -36,6 +36,23 @@
 	<main>
 <p>Austin Mesh is a community group working to build a mesh network of solar-powered <a href="https://meshtastic.org/">meshtastic</a> radios in Austin. This network acts like a city-wide text messaging system. This allows people to send unencrypted group text messages to everyone on the network. Users can also send encrypted messages to any specific member. All of this happens without any external infrastructure - no power, no cell phone towers, no internet.</p>
 
+<h3> What can it do? </h3>
+<p>Meshtastic is a bit like a decentralized social media platform.
+1) Primary Channel: You can broadcast an unencrypted message on to the Primary Channel and everyone on your mesh will see it. This is a bit like “posting” on a social media platform.
+<br>
+2) Group Channels: You can send an encrypted message to a select group of people on a Secondary Channel and everyone who is subscribed to that channel will get it. People can join the channel if you provide them with a an encryption key which you can send to them via Direct Message or which they can scan from a QR code in person. This is a bit like a private group on social media, or a group text message chain on SMS.
+<br>
+3) Direct Messages: You can send encrypted direct messages to people on the mesh. This is like a private text message or a DM on social medial.
+<br>
+4) Location: If you choose to enable it you can send your location to the mesh and it will show up on everyone’s map in the app. 
+<br>
+5) Connect worldwide: If anyone on your local mesh is running an MQTT gateway your local mesh will connect to the other meshes around the world. This can allow you to broadcast messages to everyone globally or send encrypted messages to groups or individuals worldwide.
+<br>
+6) Send telemetry data: Nodes can be set up to send telemetry data like the battery status (which is helpful for monitoring remote-solar powered nodes). Nodes can also have “modules” connected like humidity, temperature, air pressure sensors which allow them to act like weather stations.
+<br>
+</p>
+
+
 <h3> How does it work? </h3>
 <p>We have set up a number of solar-powered radio repeaters in Austin. These radios communicate at <a href="https://en.wikipedia.org/wiki/33-centimeter_band">900 MHZ</a> using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>. The radios mesh using the open-source software <a href="https://meshtastic.org/">meshtastic</a>.</p>
 	
@@ -92,3 +109,4 @@ and <a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA">YouTube</a>.<
 	</main>
 </body>
 </html>
+
