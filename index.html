@@ -44,25 +44,7 @@ The radios mesh using the open-source software <a href="https://meshtastic.org/"
 Users can connect to these repeaters by Bluetooth if they’re close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.
 <br></p>
 
-</p>		
-<h3> What can it do? </h3>
-<p>Meshtastic is a bit like a decentralized social media platform or SMS app. It has a number of different features which are similar to anyone who has sent a text message or posted on social media.
-<br>
-<b>1) Primary Channel: </b> You can broadcast an unencrypted message on to the Primary Channel and everyone on your mesh will see it. This is a bit like “posting” on a social media platform.
-<br>
-<b>2) Group Channels: </b> You can send an encrypted message to a select group of people on a Secondary Channel and everyone who is subscribed to that channel will get it. People can join the channel if you provide them with a an encryption key which you can send to them via Direct Message or which they can scan from a QR code in person. This is a bit like a private group on social media, or a group text message chain on SMS.
-<br>
-<b>3) Direct Messages: </b> You can send encrypted direct messages to people on the mesh. This is like a private text message or a DM on social medial.
-<br>
-<b>4) Location: </b> If you choose to enable it you can send your location to the mesh and it will show up on everyone’s map in the app. 
-<br>
-<b>5) Connect worldwide: </b> If anyone on your local mesh is running an MQTT gateway your local mesh will connect to the other meshes around the world. This can allow you to broadcast messages to everyone globally or send encrypted messages to groups or individuals worldwide.
-<br>
-<b>6) Send telemetry data: </b> Nodes can be set up to send telemetry data like the battery status or signal strength.; this is helpful for monitoring remote solar-powered nodes. Nodes can also have sensors connected to them which allow them to send data on temperature, humidity, or air pressure which allow them to act like weather stations.
-<br>
-</p>
 
-		
 <h3> Can you explain it like I'm 5?</h3>
 <p>Pretend you're sitting in class and want to send a note to everyone in the class.
 You write your note on a piece of paper and copy it three times.
@@ -82,6 +64,24 @@ Austin Mesh works the same way as this paper example, but instead of sending pap
 Our radios are solar powered and they don’t need any internet or cell phone coverage. This means they will work even if the power is out.
 <br>
 
+</p>		
+<h3> What can it do? </h3>
+<p>Meshtastic is a bit like a decentralized social media platform or SMS text messaging. It has a number of different features which are similar to anyone who has sent a text message or posted on social media.
+<br>
+<b>1) Primary Channel: </b> You can broadcast an unencrypted message on to the Primary Channel and everyone on your mesh will see it. This is a bit like “posting” on a social media platform.
+<br>
+<b>2) Group Channels: </b> You can send an encrypted message to a select group of people on a Secondary Channel and everyone who is subscribed to that channel will get it. People can join the channel if you provide them with a an encryption key which you can send to them via Direct Message or which they can scan from a QR code in person. This is a bit like a private group on social media, or a group text message chain on SMS.
+<br>
+<b>3) Direct Messages: </b> You can send encrypted direct messages to people on the mesh. This is like a private text message or a DM on social medial.
+<br>
+<b>4) Location: </b> If you choose to enable it you can send your location to the mesh and it will show up on everyone’s map in the app. 
+<br>
+<b>5) Connect worldwide: </b> If anyone on your local mesh is running an MQTT gateway your local mesh will connect to the other meshes around the world. This can allow you to broadcast messages to everyone globally or send encrypted messages to groups or individuals worldwide.
+<br>
+<b>6) Send telemetry data: </b> Nodes can be set up to send telemetry data like the battery status or signal strength.; this is helpful for monitoring remote solar-powered nodes. Nodes can also have sensors connected to them which allow them to send data on temperature, humidity, or air pressure which allow them to act like weather stations.
+<br>
+</p>
+
 <h3>Why build this network?</h3>
 <p>
 <b>1) Community:</b> Because this is essentially a city-wide group text message chain we are hoping people use the network to build community. Tell the group where your band is playing tonight, chat about local politics, ask for a good cheese dip recipe, etc.
@@ -90,6 +90,30 @@ Our radios are solar powered and they don’t need any internet or cell phone co
 <br>	
 <b>3) Decentralized, Open, and Resilient:</b> Austin Mesh is decentralized - there is no central server or corporation - all the communication bounces through the entire mesh. Austin Mesh is open to everyone - you don't have to ask permission to join and all of the software is open-source. Austin Mesh is resilient - our solar-powered radios don't need cell phone towers, internet access, or electricity. We hope this project will inspire others to build things that are decentralized, open, and resilient.
 <br><br>
+
+<h3>Comparing it to APRS on Ham Radio</h3>
+<p>
+For people who are familiar with using the <a href="https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System“>Automatic Packet Reporting System (APRS) </a> on ham radio, Meshtastic is similar in a few ways:
+<br>
+<b>Digipeaters: </b>APRS radios can be set up as clients, which receive all messages and only transmit the users messages, or APRS radios can be set up as digipeaters, which repeat all the messages they hear. Meshtastic radios by default all act as repeaters – so they like APRS digipeaters.
+<br>
+<b>iGates: </b>MQTT Gateways are like APRS iGates – they repeat all local traffic over the internet to other MQTT Gateways around the world.
+<br>
+<b>ANSRVR: </b>APRS users can subscribe to groups using the ANSRVR service. This allows for group chats like the popular #APRSThursday net. Meshtastic has “Secondary Channels” that can be subscribe to, allowing users to send messages to everyone on the channel.
+<br>
+<b>Burst Communication: </b>APRS uses the AX.25 protocol which sends messages using data bursts between 0.3 and 0.5 seconds long. Meshtastic uses the LoRa protocol which sends messages in data bursts between 0.5 and 10 seconds long.
+<br>
+<br>
+But Meshtastic is also different than APRS in a few ways:
+<b>Primary Channel: </b>APRS doesn’t have a way to broadcast a message to everyone on the network. 
+<b>Encryption: </b>APRS is unencrypted because it is illegal to use encryption over ham radio. Meshtastic is encrypted for communications on private group channels and for direct messages between users, because it runs on the 900 MHz ISM band, which does not have restrictions on encryption.
+<b>License: </b>APRS requires the user to have a ham radio license. Meshtastic does not require any license and is open for anyone to use.
+<b>Equipment Cost: </b>APRS capable handheld ham radios cost upwards of $400. Meshtastic radios cost less than $100.
+<b>Email and SMS services: </b>APRS has services which allow users to send emails and SMS text messages to people who aren’t ham radio users. Meshtastic does not have this feature but it could be added in the future.
+<b>Simplicity: </b>APRS is quite a bit more difficult to use than Meshtastic. APRS does not have any standardized user interface – there are dozens of software packages available. Meshtastic has a standardized iPhone and Android app which is easy to understand for new users.
+<br>
+<br>
+
 
 <h3>How can I join the network?</h3>
 <p>
