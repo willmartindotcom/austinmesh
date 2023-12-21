@@ -165,7 +165,296 @@ Here is a map of our coverage (slightly out of date):</p>
 <br>
 <br><img src="meshtasticfriday.PNG" alt="Meshtastic Friday">
 <br></p>
-	
+
+<h3>Building a Solar-Powered Repeater</h3>
+<p>Here is the parts list for most-preferred way to build a solar powered repeater. This design doesn’t require any soldering or complicated connectors. It also doesn’t require any battery management chips (which often have long shipping lead times and can be hard to get). For this design the solar panel is connected directly to the battery pack via USB. Then the battery pack is connected to the board via USB. The Voltaic Systems V25 battery is nice because it is optimized to charge from a solar panel and it is set standard to an “always on” mode which means the battery bank does not shut off after a set amount of time like other battery packs – this is useful as the RAK chip uses very little power and can trick other battery packs into shutting off. The other really nice thing about the Voltaic pack is than when it drains down completely it shuts down, but then once the solar panel has sufficiently charged it back up it will automatically turn itself back on again. Right now we are testing the V25 battery which has 6,400mAh, but if we were going to install a node in a very hard-to-reach place we’d probably use the larger V75 19,200mAh battery.
+<br>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>Item<o:p></o:p></b></p>
+  </td>
+  <td width=95 valign=top style='width:71.35pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>Product
+  Name<o:p></o:p></b></p>
+  </td>
+  <td width=80 valign=top style='width:59.85pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>Cost<o:p></o:p></b></p>
+  </td>
+  <td width=341 valign=top style='width:255.95pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>Link<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Solar Panel</p>
+  </td>
+  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  class=SpellE>Soshine</span> 12W</p>
+  </td>
+  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$30</p>
+  </td>
+  <td width=341 valign=top style='width:255.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
+  href="https://www.amazon.com/Soshine-USB-Solar-Panel-Monocrystalline/dp/B0CKXQ1XQ9">https://www.amazon.com/Soshine-USB-Solar-Panel-Monocrystalline/dp/B0CKXQ1XQ9</a></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Battery</p>
+  </td>
+  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Voltaic
+  Systems V25</p>
+  </td>
+  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$44</p>
+  </td>
+  <td width=341 valign=top style='width:255.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>https://www.amazon.com/Voltaic-Systems-Formerly-Battery-Samsung/dp/B07ZS3WYZY</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Rak Board</p>
+  </td>
+  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>RAK Meshtastic
+  Kit</p>
+  </td>
+  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$35</p>
+  </td>
+  <td width=341 valign=top style='width:255.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
+  href="https://store.rokland.com/products/rak-wireless-wisblock-meshtastic-starter-kit">https://store.rokland.com/products/rak-wireless-wisblock-meshtastic-starter-kit</a></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Antenna
+  Connector</p>
+  </td>
+  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>IPEX to N
+  Type Female</p>
+  </td>
+  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$4</p>
+  </td>
+  <td width=341 valign=top style='width:255.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>https://www.amazon.com/gp/product/B09N3LPBYB/</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Antenna</p>
+  </td>
+  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>915 MHz 3 dBi
+  N-Female</p>
+  </td>
+  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$18</p>
+  </td>
+  <td width=341 valign=top style='width:255.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
+  href="https://store.rokland.com/collections/802-11ah-wi-fi-halow/products/3-dbi-rak-brand-fiberglass-outdoor-antenna-bracket-mount-for-rak-bobcat-sensecap">https://store.rokland.com/collections/802-11ah-wi-fi-halow/products/3-dbi-rak-brand-fiberglass-outdoor-antenna-bracket-mount-for-rak-bobcat-sensecap</a></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Box</p>
+  </td>
+  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>ABS Box, 200mm
+  x 120mm x 75mm</p>
+  </td>
+  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$10</p>
+  </td>
+  <td width=341 valign=top style='width:255.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
+  href="https://www.amazon.com/gp/product/B06XSQZ5M6">https://www.amazon.com/gp/product/B06XSQZ5M6</a></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Drain Plug</p>
+  </td>
+  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Mouser</p>
+  </td>
+  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$3</p>
+  </td>
+  <td width=341 valign=top style='width:255.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>https://www.mouser.com/ProductDetail/Amphenol-LTW/VENT-PS1YBK-N8001?qs=5aG0NVq1C4wAxWre7fChJA%3D%3D</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>USB Cable Through-hole</p>
+  </td>
+  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>3/4 NPT Cable
+  Gland</p>
+  </td>
+  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$2</p>
+  </td>
+  <td width=341 valign=top style='width:255.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>https://www.amazon.com/gp/product/B07ZRHPRP7/</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Antenna Wrap</p>
+  </td>
+  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
+  class=SpellE>Proxicast</span></p>
+  </td>
+  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$2</p>
+  </td>
+  <td width=341 valign=top style='width:255.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>https://www.amazon.com/gp/product/B00K5GW67O/</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10;mso-yfti-lastrow:yes'>
+  <td width=107 valign=top style='width:80.35pt;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=95 valign=top style='width:71.35pt;border:none;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-top-alt:solid windowtext .5pt;
+  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
+  </td>
+  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>$148<o:p></o:p></b></p>
+  </td>
+  <td width=341 valign=top style='width:255.95pt;border:none;mso-border-top-alt:
+  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+</table>
+		
 <p>This site is (c) by Will Martin and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
 
 	</main>
