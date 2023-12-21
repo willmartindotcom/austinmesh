@@ -120,7 +120,6 @@ But Meshtastic is also different than APRS in a few ways:
 <br>
 <br>
 
-
 <h3>How can I join the network?</h3>
 <p>
 1) Get a Meshtastic Radio.
@@ -139,32 +138,6 @@ If you can afford it, we recommend you buy a pre-built solar-powered node for ab
 <a href="https://www.instagram.com/p/Cq0jOpYLpZy/">Instagram</a>, 
 <a href="https://www.tiktok.com/@austinmesh.org">TikTok</a>, 
 and <a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA">YouTube</a>.</p>
-
-<h3>What kind of coverage does the mesh network have?</h3>
-<p>As of Spring 2023 we have coverage throughout most of downtown and central Austin. We're actively working to expand this coverage.
-<br>
-Here is a live map of nodes globally that have access to MQTT: <a href="https://map.technicallyrural.com">MQTT Map</a>.
-<br>
-Here is a map of self reported nodes that is more out-of-date: <a href="https://canvis.app/meshtastic-map">Self-Reported Map</a>.
-<br>
-Here is a map of our coverage (slightly out of date):</p>
-<img src="coverage.jpg" alt="Austin Mesh Coverage Map"></p>
-		
-<h3>Meshtastic Friday</h3>
-<p>Austin Mesh created a weekly check-in called Meshtastic Friday. Join us every Friday for the weekly check in.
-<br>
-<b>When:</b> Every Friday from 00:00 UTC to 23:59 UTC, but shoot for 16:00 UTC: 8 AM San Francisco / 9 AM Denver / 10 AM Austin / 11 AM New York / 4 PM London / 5 PM Berlin / 11 PM Singapore
-<br>
-<b>Where:</b> On the Meshtastic Primary Channel (0). Either through your local Meshtastic network or via the default app settings for MQTT (mqtt.Meshtastic.org / root topic msh)
-<br>
-<b>How:</b> Simply send any message to the primary channel using Meshtastic.
-<br>
-<b>Who:</b> All Meshtastic users anywhere on earth!
-<br>
-<b>Why:</b> Increase Meshtastic adoption by using it regularly. Stress test the network to improve it. Improve your familiarity with Meshtastic. Meet like-minded people from around the world.
-<br>
-<br><img src="meshtasticfriday.PNG" alt="Meshtastic Friday">
-<br></p>
 
 <h3>Building a Solar-Powered Repeater</h3>
 <p>Here is the parts list for most-preferred way to build a solar powered repeater. This design doesn’t require any soldering or complicated connectors. It also doesn’t require any battery management chips (which often have long shipping lead times and can be hard to get). For this design the solar panel is connected directly to the battery pack via USB. Then the battery pack is connected to the board via USB. The Voltaic Systems V25 battery is nice because it is optimized to charge from a solar panel and it is set standard to an “always on” mode which means the battery bank does not shut off after a set amount of time like other battery packs – this is useful as the RAK chip uses very little power and can trick other battery packs into shutting off. The other really nice thing about the Voltaic pack is than when it drains down completely it shuts down, but then once the solar panel has sufficiently charged it back up it will automatically turn itself back on again. Right now we are testing the V25 battery which has 6,400mAh, but if we were going to install a node in a very hard-to-reach place we’d probably use the larger V75 19,200mAh battery.
@@ -455,6 +428,32 @@ Here is a map of our coverage (slightly out of date):</p>
  </tr>
 </table>
 		
+<h3>What kind of coverage does the mesh network have?</h3>
+<p>As of Spring 2023 we have coverage throughout most of downtown and central Austin. We're actively working to expand this coverage.
+<br>
+Here is a live map of nodes globally that have access to MQTT: <a href="https://map.technicallyrural.com">MQTT Map</a>.
+<br>
+Here is a map of self reported nodes that is more out-of-date: <a href="https://canvis.app/meshtastic-map">Self-Reported Map</a>.
+<br>
+Here is a map of our coverage (slightly out of date):</p>
+<img src="coverage.jpg" alt="Austin Mesh Coverage Map"></p>
+		
+<h3>Meshtastic Friday</h3>
+<p>Austin Mesh created a weekly check-in called Meshtastic Friday. Join us every Friday for the weekly check in.
+<br>
+<b>When:</b> Every Friday from 00:00 UTC to 23:59 UTC, but shoot for 16:00 UTC: 8 AM San Francisco / 9 AM Denver / 10 AM Austin / 11 AM New York / 4 PM London / 5 PM Berlin / 11 PM Singapore
+<br>
+<b>Where:</b> On the Meshtastic Primary Channel (0). Either through your local Meshtastic network or via the default app settings for MQTT (mqtt.Meshtastic.org / root topic msh)
+<br>
+<b>How:</b> Simply send any message to the primary channel using Meshtastic.
+<br>
+<b>Who:</b> All Meshtastic users anywhere on earth!
+<br>
+<b>Why:</b> Increase Meshtastic adoption by using it regularly. Stress test the network to improve it. Improve your familiarity with Meshtastic. Meet like-minded people from around the world.
+<br>
+<br><img src="meshtasticfriday.PNG" alt="Meshtastic Friday">
+<br></p>
+
 <p>This site is (c) by Will Martin and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
 
 	</main>
