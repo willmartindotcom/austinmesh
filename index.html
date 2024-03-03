@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
     <title>Austin Mesh</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            font-size: 18px;
         }
         header {
             background-color: #67EA94;
@@ -17,643 +19,355 @@
         }
         main {
             padding: 10px;
-            margin: 0 auto;
+            margin: 40px auto;
             max-width: 700px;
         }
+        h2 {
+            margin-top: 36px;
+            padding-top: 18px;
+            border-top: 1px solid #ddd;
+        }
         p {
-            font-size: 18px;
             line-height: 1.5;
             margin: 0 0 20px 0;
+        }
+        dt {
+            font-weight: bold;
         }
         img {
             max-width: 100%;
             width: 500px;
         }
+        .table-wrapper {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        tr {
+            border-bottom: 1px solid #ddd;
+        }
+        tbody tr:last-child {
+            border-bottom: 0 none;
+        }
+        th {
+            text-align: left;
+        }
+        td, th {
+            padding: 10px 10px;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <h1>Austin Mesh</h1>
     </header>
 
     <main>
-<p>Austin Mesh is a community group working to build a mesh network of solar-powered <a href="https://meshtastic.org/">meshtastic</a> radios in Austin.
-This network acts like a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network.
-All of this happens without any external infrastructure - no power, no cell phone towers, no internet.</p>
+        <p>Austin Mesh is a community group working to build a mesh network of solar-powered <a href="https://meshtastic.org/">meshtastic</a> radios in Austin. This network acts like a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network. All of this happens without any external infrastructure - no power, no cell phone towers, no internet.</p>
 
-<h3> How does it work? </h3>
-<p>We have set up a number of solar-powered radio repeaters in Austin. These radios communicate on the <a href="https://en.wikipedia.org/wiki/33-centimeter_band">906.875 MHZ</a> frequency using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>.
-The radios mesh using the open-source <a href="https://meshtastic.org/">Meshtastic</a> software.
-Users can connect to these repeaters by Bluetooth if they’re close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.
-<br></p>
+        <h2 id="how-does-it-work">How does it work?</h2>
+        <p>We have set up a number of solar-powered radio repeaters in Austin. These radios communicate on the <a href="https://en.wikipedia.org/wiki/33-centimeter_band">906.875 MHZ</a> frequency using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>. The radios mesh using the open-source <a href="https://meshtastic.org/">Meshtastic</a> software. Users can connect to these repeaters by Bluetooth if they’re close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.
+            <br></p>
 
-<h3> Can you explain it like I'm 5?</h3>
-<p>Pretend you're sitting in class and want to send a note to everyone in the class.
-You write your note on a piece of paper and copy it three times.
-The message can be up to 228 characters - about as long as this paragraph so far.
-You hand those three pieces of paper to the three people around you.
-Then those three people re-write the message three times and hand it to the three people around them and so on.
-Now imagine a big gust of wind comes and blows away some of the messages.
-If even just a few people saw the note and keep copying and re-sending it, eventually everyone will get a copy of the note.
-This is like sending an unencrypted message to everyone on the network.
-<br><br>
-Now imagine you want to send a message to a single person or a select group of people but you don't want other people who see the note to be able to read it.
-You could write the note using a secret language. You could then hand a decoder key to your friend or to a group of friends and they could decode the message.
-The message still gets passed the same way - with every single person writing the message a few times and handing it to everyone - but only those people with the decoder key will be able to understand the message.
-This is like sending an encrypted direct message or encrypted group message.
-<br><br>
-Austin Mesh works the same way as this paper example, but instead of sending paper notes we're using digital text messages and sending it with radio waves.
-Our radios are solar powered and they don’t need any internet or cell phone coverage. This means they will work even if the power is out.
-<br>
+        <h2 id="eli5">Can you explain it like I'm 5?</h2>
+        <p>Pretend you're sitting in class and want to send a note to everyone in the class. You write your note on a piece of paper and copy it three times. The message can be up to 228 characters - about as long as this paragraph so far. You hand those three pieces of paper to the three people around you. Then those three people re-write the message three times and hand it to the three people around them and so on. Now imagine a big gust of wind comes and blows away some of the messages. If even just a few people saw the note and keep copying and re-sending it, eventually everyone will get a copy of the note. This is like sending an unencrypted message to everyone on the network.</p>
+        <br>
+        <p>Now imagine you want to send a message to a single person or a select group of people but you don't want other people who see the note to be able to read it. You could write the note using a secret language. You could then hand a decoder key to your friend or to a group of friends and they could decode the message. The message still gets passed the same way - with every single person writing the message a few times and handing it to everyone - but only those people with the decoder key will be able to understand the message. This is like sending an encrypted direct message or encrypted group message.</p>
+        <br>
+        <p>Austin Mesh works the same way as this paper example, but instead of sending paper notes we're using digital text messages and sending it with radio waves. Our radios are solar powered and they don’t need any internet or cell phone coverage. This means they will work even if the power is out.</p>
+        <br>
 
-</p>
-<h3> What can it do? </h3>
-<p>Meshtastic is a bit like a decentralized social media platform or SMS text messaging. It has a number of different features which will be familiar to anyone who has sent a text message or posted on social media.
-<br>
-<b>1) Primary Channel: </b> You can broadcast an unencrypted message to the Primary Channel and everyone on your mesh will see it. This is a bit like “posting” publicly on a social media platform.
-<br>
-<b>2) Group Channels: </b> You can send an encrypted message to a select group of people on a Secondary Channel and everyone who is subscribed to that channel will get it. People can join the channel if you provide them with an encryption key which you can send to them via Direct Message or which they can scan from a QR code in person. This is a bit like a private group on social media, or a group text message chain on SMS.
-<br>
-<b>3) Direct Messages: </b> You can send encrypted direct messages to people on the mesh. This is like a private text message or a DM on social medial.
-<br>
-<b>4) Location: </b> If you choose to enable it you can send your location to the mesh and it will show up on everyone’s map in the app.
-<br>
-<b>5) Connect Worldwide: </b> If anyone on your local mesh is running an MQTT gateway your local mesh will connect to the other meshes around the world. This can allow you to broadcast messages to everyone globally or send encrypted messages to groups or individuals worldwide.
-<br>
-<b>6) Telemetry Data: </b> Nodes can be set up to send telemetry data like the battery status or signal strength, which is helpful for monitoring remote solar-powered nodes. Nodes can also have sensors connected to them which allow them to send data on temperature, humidity, or air pressure which allow them to act like weather stations.
-<br>
-</p>
+        <h2 id="what-can-it-do">What can it do?</h2>
+        <p>Meshtastic is a bit like a decentralized social media platform or SMS text messaging. It has a number of different features which will be familiar to anyone who has sent a text message or posted on social media.</p>
+        <dl>
+            <dt>1) Primary Channel:</dt>
+            <dd>You can broadcast an unencrypted message to the Primary Channel and everyone on your mesh will see it. This is a bit like “posting” publicly on a social media platform.</dd>
+            <dt>2) Group Channels:</dt>
+            <dd>You can send an encrypted message to a select group of people on a Secondary Channel and everyone who is subscribed to that channel will get it. People can join the channel if you provide them with an encryption key which you can send to them via Direct Message or which they can scan from a QR code in person. This is a bit like a private group on social media, or a group text message chain on SMS.</dd>
+            <dt>3) Direct Messages:</dt>
+            <dd>You can send encrypted direct messages to people on the mesh. This is like a private text message or a DM on social medial.</dd>
+            <dt>4) Location:</dt>
+            <dd>If you choose to enable it you can send your location to the mesh and it will show up on everyone’s map in the app.</dd>
+            <dt>5) Connect Worldwide:</dt>
+            <dd>If anyone on your local mesh is running an MQTT gateway your local mesh will connect to the other meshes around the world. This can allow you to broadcast messages to everyone globally or send encrypted messages to groups or individuals worldwide.</dd>
+            <dt>6) Telemetry Data:</dt>
+            <dd>Nodes can be set up to send telemetry data like the battery status or signal strength, which is helpful for monitoring remote solar-powered nodes. Nodes can also have sensors connected to them which allow them to send data on temperature, humidity, or air pressure which allow them to act like weather stations.</dd>
+        </dl>
 
-<h3>Why build this network?</h3>
-<p>
-<b>1) Community:</b> Because this is essentially a city-wide group text message chain we are hoping people use the network to build community. Tell the group where your band is playing tonight, chat about local politics, ask for a good cheese dip recipe, etc.
-<br>
-<b>2) Disasters:</b> If the power goes out, like during the 2021 Winter Storm Uri, this network should allow people to continue to communicate with each other without electricity, cell phone coverage, or internet. This big city-wide group text chain could allow people to ask for help or offer assistance. People could get information about where warming centers are open or ask who in their neighborhood still has power. People could also send encrypted direct messages to check in on friends and family or they could send encrypted group messages to coordinate privately in a group.
-<br>
-<b>3) Decentralized, Open, and Resilient:</b> Austin Mesh is decentralized - there is no central server or corporation - all the communication bounces through the entire mesh. Austin Mesh is open to everyone - you don't have to ask permission to join and all of the software is open-source. Austin Mesh is resilient - our solar-powered radios don't need cell phone towers, internet access, or electricity. We hope this project will inspire others to build things that are decentralized, open, and resilient.
-<br>
+        <h2 id="why-build-network">Why build this network?</h2>
+        <h3>1) Community</h3>
+        <p>Because this is essentially a city-wide group text message chain we are hoping people use the network to build community. Tell the group where your band is playing tonight, chat about local politics, ask for a good cheese dip recipe, etc.</p>
+        <h3>2) Disasters</h3>
+        <p>If the power goes out, like during the 2021 Winter Storm Uri, this network should allow people to continue to communicate with each other without electricity, cell phone coverage, or internet. This big city-wide group text chain could allow people to ask for help or offer assistance. People could get information about where warming centers are open or ask who in their neighborhood still has power. People could also send encrypted direct messages to check in on friends and family or they could send encrypted group messages to coordinate privately in a group.</p>
+        <h3>3) Decentralized, Open, and Resilient</h3>
+        <p>Austin Mesh is decentralized - there is no central server or corporation - all the communication bounces through the entire mesh. Austin Mesh is open to everyone - you don't have to ask permission to join and all of the software is open-source. Austin Mesh is resilient - our solar-powered radios don't need cell phone towers, internet access, or electricity. We hope this project will inspire others to build things that are decentralized, open, and resilient.</p>
 
-<h3>What kind of coverage does the mesh network have?</h3>
-<p>As of Winter 2023 we have coverage throughout most of downtown and central Austin. We're actively working to expand this coverage.
-<br>
-Here is a live map of nodes globally that have access to MQTT: <a href="https://map.technicallyrural.com">MQTT Map</a>.
-<br>
-There is a secondary MQTT map here: <a href="https://meshmap.net/">2nd MQTT Map</a>.
-<br>
-Here is a map of self reported nodes that is more out-of-date: <a href="https://canvis.app/meshtastic-map">Self-Reported Map</a>.
-<br>
-Here is a map of our coverage (slightly out of date):</p>
-<img src="coverage.jpg" alt="Austin Mesh Coverage Map"></p><br>
+        <h2 id="coverage">What kind of coverage does the mesh network have?</h2>
+        <p>As of Winter 2023 we have coverage throughout most of downtown and central Austin. We're actively working to expand this coverage.
+            <br> Here is a live map of nodes globally that have access to MQTT: <a href="https://map.technicallyrural.com">MQTT Map</a>.
+            <br> There is a secondary MQTT map here: <a href="https://meshmap.net/">2nd MQTT Map</a>.
+            <br> Here is a map of self reported nodes that is more out-of-date: <a href="https://canvis.app/meshtastic-map">Self-Reported Map</a>.
+            <br> Here is a map of our coverage (slightly out of date):</p>
+        <img src="coverage.jpg" alt="Austin Mesh Coverage Map">
 
-<h3>How can I join the network?</h3>
-<p>
-1) Get a Meshtastic Radio.
-You can build one yourself for about $35. The official Meshtastic page keeps a current list of <a href="https://meshtastic.org/docs/hardware/devices/">Supported Hardware.</a> The LILYGO T-Echo is a good first meshtastic radio, as it costs around $70 and is ready to go out of the box (besides having to flash the firmware).
-You can also buy a pre-built battery-powered radio for between $50-$100 on Etsy or eBay - these usually have 3D printed cases.
-If you can afford it, and have a place to mount it outside, we recommend you buy a pre-built solar-powered node for between $100 and $200 on Etsy and mount it as high off the ground as you can.
-<br>
-2) Download the <a href="https://meshtastic.org/docs/software">Meshtastic App</a> on your iPhone or Android.
-<br>
-3) Pair your radio to your phone with Bluetooth.
-<br>
-4) Open the Meshtastic app and say hi!
-<br></p>
+        <h2 id="join-the-network">How can I join the network?</h2>
+        <ol>
+            <li>
+                Get a Meshtastic Radio.
+                <br> You can build one yourself for about $35. The official Meshtastic page keeps a current list of <a href="https://meshtastic.org/docs/hardware/devices/">Supported Hardware.</a> The LILYGO T-Echo is a good first meshtastic radio, as it costs around $70 and is ready to go out of the box (besides having to flash the firmware).
+                <br> You can also buy a pre-built battery-powered radio for between $50-$100 on Etsy or eBay - these usually have 3D printed cases.
+                <br> If you can afford it, and have a place to mount it outside, we recommend you buy a pre-built solar-powered node for between $100 and $200 on Etsy and mount it as high off the ground as you can. Alternatively you can <a href="#building-a-solar-powered-repeater">build your own</a>.
+            </li>
+            <li>Download the <a href="https://meshtastic.org/docs/software">Meshtastic App</a> on your iPhone or Android.</li>
+            <li>Pair your radio to your phone with Bluetooth.</li>
+            <li>Open the Meshtastic app and say hi!</li>
+        </ol>
 
-<h3>How can I join the group?</h3>
-<p>You can <a href="mailto:info@austinmesh.org">email us</a> to become an official member and attend our in-person meetings in Austin. You can also follow us on <a href="https://twitter.com/AustinMeshOrg">Twitter</a>,
-<a href="https://www.instagram.com/p/Cq0jOpYLpZy/">Instagram</a>,
-<a href="https://www.tiktok.com/@austinmesh.org">TikTok</a>,
-<a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA">YouTube</a>,
-and <a href="https://discord.gg/c8tph2HX">Discord</a>.
-        
-<h3>Building a Solar-Powered Repeater</h3>
-<p>We have tried 5 permutations of solar powering nodes:
-<br><b>Version 1.0:</b> Using RAK RAKBox-B2 Enclosure with solar panel. The panel was connected directly to the RAK Wireless WisBlock Meshtastic Starter Kit US915. We connected a 2000 MAh Lithium Polymer battery directly to the RAK board. We drilled a hole in the top of the box and attached a fiberglass antenna, which was connected to the RAK board with an iPEX to N-Type connector. We mounted this on top of one of the UT buildings and it died within a month. The 0.4 watt panel is way too small.
-<br><b>Version 2.0:</b> Same as 1.0 but we added a second 5 watt solar panel that was connected to the RAK board via USB. Also died within a month.
-<br><b>Version 3.0:</b> To minimize the amount of components outside the box we used a much larger box with a clear lid and placed the solar panel inside the box. We added a Texas Instruments Green Power Module between the solar panel and the RAK board to help regulate the power. For batteries we switched to using four 18650 batteries and we also added an overdischarge protection circuit from Voltaic Enclosures (not to be confused with Voltaic Systems) between the battery and the RAK board to provide clean shutoff when battery voltage fell below 2.5v. We mounted this on top of the UT buildings and it died in 3 months.
-<br><b>Version 4.0:</b> Same as Version 3.0 but we mounted the solar panel outside of the box (using a smaller box). We mounted this on a pole and it died within 3 months.
-<br><b>Version 5.0:</b> For this version we stopped using the RAK’s solar and battery connectors entirely. Instead we connected a large 12 watt solar panel to a Voltaic Systems battery via USB and then connected the battery to the RAK board via USB. The Voltaic Systems battery acts as the solar charge controller and also acts as the overdischarge protection circuit; the battery will charge at a range of voltages from the solar panel (if it gets shaded) and the battery will shut off if the voltages drops too low and will reboot itself once it has recharged sufficiently.
-<br>
-<br>Lessons learned:
-<br>1)  Don’t trust the RAK board to handle varying solar voltage or varying battery voltage. It is very unhappy if either voltage goes outside of a narrow range. In fact there is a <a href="https://meshtastic.discourse.group/t/rak-4631-solar-repeater/7694/7">known issue</a> where the Nordic nRF52840 module inside of the RAK 4631 chip causes it to enter a “Super Deep Sleep” fault state when it is supplied with 3.3V. This means when the battery voltage falls too low the RAK chip shuts down and can only be rebooted manually.
-<br>2)  Solar panels: bigger is better. 10 watts or more is ideal.
-<br>3)  Battery: bigger is better. 10,000 mAh or more is ideal.
-<br>4)  Antenna: fiberglass antennas are the most robust and can handle wind, rain, and UV light better than rubber ducky antennas.
-<br>5)  Heat can kill the battery – it is best to shade the box containing the battery.
-<br>6)  Don’t add any modules. The GPS module increases battery usage significantly and is unnecessary if the repeater is in a fixed position.
-<br>7)  Seal everything properly and make sure water has a way to get out of the case. Use o-rings for the antenna mount and wrap connectors in proxicast. Add a drain plug to the case so any condensation has a way to escape. For high humidity environments, spray the electronics with conformal coating.
-<br>
-<br>These are lessons learned from Austin Texas, where the main environmental stressors are heat and thunderstorms. In the summer of 2023 we 80 days over 100° F (38°C) and we had a stretch of 11 days over 105° F (40.5°C), during which two radios died. We also can have both high humidity and high temperature at the same time in Austin; in the summer the weather would swing from 80° F (27°C) with 85% humidity in the morning to 105° F (38°C) with 25% humidity in the afternoon. <a href="https://weatherspark.com/h/y/8004/2023/Historical-Weather-during-2023-in-Austin-Texas-United-States">Weather history here.</a> Our learnings are probably applicable to other southern and desert climates.
-<br>
-<br>Considerations for other climates:
-<br>1)  Northern Climates: At higher latitudes there is much less sunshine in the winter. A larger solar panel would be necessary and angling the panel lower to the horizon would be beneficial. The rule of thumb is to angle the solar panels at the same degree as your latitude. In Austin our panels should be angled at 30° but in Calgary the optimal angle would be 50°. Batteries should also be bigger in colder climates as low temperatures reduce their performance.
-<br>2)  Coastal Climates: salt spray and condensation from fog can kill electronics quickly. In coastal climates it is best to spray the electronics with conformal coating.
-<br>
-<br>With all that said, here is the parts list for our most-preferred way to build a solar powered repeater. This design doesn’t require any soldering or complicated connectors. It also doesn’t require any battery management chips (which often have long shipping lead times and can be hard to get). For this design the solar panel is connected directly to the battery pack via USB. Then the battery pack is connected to the board via USB. The Voltaic Systems V75 battery is nice because it is optimized to charge from a solar panel and it is set standard to an “always on” mode which means the battery bank does not shut off after a set amount of time like other battery packs – this is useful as the RAK chip uses very little power and can trick other battery packs into shutting off. The other really nice thing about the Voltaic pack is than when it drains down completely it shuts down, but then once the solar panel has sufficiently charged it back up it will automatically turn itself back on again.
-The RAK radio uses between 100 and 1000 mAh per day, with about 400 mAh per day being average so theoretically the 19,200mAh Voltaic V75 could keep the radio running for 48 days without solar.
-<br>
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
- style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
- mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>Item<o:p></o:p></b></p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border:solid windowtext 1.0pt;
-  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>Product
-  Name<o:p></o:p></b></p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border:solid windowtext 1.0pt;
-  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>Cost<o:p></o:p></b></p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border:solid windowtext 1.0pt;
-  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>Link<o:p></o:p></b></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Solar Panel</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  class=SpellE>Soshine</span> 12W</p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$30</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://www.amazon.com/Soshine-USB-Solar-Panel-Monocrystalline/dp/B0CKXQ1XQ9">Amazon</a> or <a
-  href="https://www.aliexpress.us/item/3256805874482226.html">AliExpress</a></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Battery</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Voltaic
-  Systems V75</p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$79</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://www.amazon.com/Voltaic-Systems-Always-External-Battery/dp/B084BPSFKH">Amazon</a> or <a
-  href="https://voltaicsystems.com/v75/">voltaicsystems.com</a></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Rak Board</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>RAK Meshtastic
-  Kit</p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$35</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://store.rokland.com/products/rak-wireless-wisblock-meshtastic-starter-kit">Rokland</a></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Antenna
-  Connector</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>IPEX to N
-  Type Female</p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$4</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://www.amazon.com/gp/product/B09N3LPBYB">Amazon</a></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Antenna</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>915 MHz 3 dBi
-  N-Female</p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$18</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://store.rokland.com/collections/802-11ah-wi-fi-halow/products/3-dbi-rak-brand-fiberglass-outdoor-antenna-bracket-mount-for-rak-bobcat-sensecap">Rokland</a></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:6'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Box</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>ABS Box with mounting tabs, 158mm
-  x 90mm x 46mm</p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$10</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://www.amazon.com/dp/B07NSSJ4H1/">Amazon</a> or <a
-  href="https://www.aliexpress.us/item/3256803025946686.html">AliExpress</a></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:7'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Drain Plug</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>VENT-PS1YBK-N8001</p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$3</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://www.mouser.com/ProductDetail/Amphenol-LTW/VENT-PS1YBK-N8001?qs=5aG0NVq1C4wAxWre7fChJA%3D%3D">Mouser</a></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:8'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>USB Cable Pass-Through</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>3/4 NPT Cable
-  Gland</p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$2</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://www.amazon.com/gp/product/B07ZRHPRP7">Amazon</a></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:9'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Antenna Wrap</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  class=SpellE>Proxicast</span></p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$2</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://www.amazon.com/gp/product/B00K5GW67O/">Amazon</a></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:10;mso-yfti-lastrow:yes'>
-  <td width=107 valign=top style='width:80.35pt;border:none;mso-border-top-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border:none;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-top-alt:solid windowtext .5pt;
-  mso-border-right-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>$183<o:p></o:p></b></p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border:none;mso-border-top-alt:
-  solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><o:p>&nbsp;</o:p></p>
-  </td>
- </tr>
-</table>
-<br>To turn this repeater into a solar-powered meshtastic birdhouse you can just add the following components. Simply paint the top of the birdhouse black and glue on the solar panel, cut a hole in the back of the birdhouse big enough to put the box into it, attach the antenna mount L-Bracket to the side of the birdhouse, and connect the box to the antenna on the mount with the pigtail using the jam nut.
-<br>
-<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
- style='border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
- mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>Item<o:p></o:p></b></p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border:solid windowtext 1.0pt;
-  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>Product
-  Name<o:p></o:p></b></p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border:solid windowtext 1.0pt;
-  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>Cost<o:p></o:p></b></p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border:solid windowtext 1.0pt;
-  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
-  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b>Link<o:p></o:p></b></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Birdhouse</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span
-  class=SpellE>Birdhouse</p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$25</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://www.amazon.com/dp/B08T92JBCK">Amazon</a></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Pigtail Cable</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Pigtail Cable</p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$10</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://www.amazon.com/gp/product/B09D3H19WF/">Amazon</a></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Jam Nut</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Jam Nut</p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$12</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://www.amazon.com/dp/B08VCJXMXW">Amazon</a></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4'>
-  <td width=107 valign=top style='width:80.35pt;border:solid windowtext 1.0pt;
-  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
-  padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Antenna Bracket</p>
-  </td>
-  <td width=95 valign=top style='width:71.35pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>Larsen Mobile Antenna Mounts TMB58B</p>
-  </td>
-  <td width=80 valign=top style='width:59.85pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'>$15</p>
-  </td>
-  <td width=341 valign=top style='width:80pt;border-top:none;border-left:
-  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
-  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a
-  href="https://www.dxengineering.com/parts/lsn-tmb58b">DX Engineering</a></p>
-  </td>
- </tr>
-</table>
-<br>
-<h3>Meshtastic Friday</h3>
-<p>Austin Mesh created a weekly check-in called Meshtastic Friday. Join us every Friday for the weekly check in.
-<br>
-<b>When:</b> Every Friday from 00:00 UTC to 23:59 UTC, but shoot for 16:00 UTC: 8 AM San Francisco / 9 AM Denver / 10 AM Austin / 11 AM New York / 4 PM London / 5 PM Berlin / 11 PM Singapore
-<br>
-<b>Where:</b> On the Meshtastic Primary Channel (0). Either through your local Meshtastic network or via the default app settings for MQTT (mqtt.Meshtastic.org / root topic msh)
-<br>
-<b>How:</b> Simply send any message to the primary channel using Meshtastic.
-<br>
-<b>Who:</b> All Meshtastic users anywhere on earth!
-<br>
-<b>Why:</b> Increase Meshtastic adoption by using it regularly. Stress test the network to improve it. Improve your familiarity with Meshtastic. Meet like-minded people from around the world.
-<br>
-<br><img src="meshtasticfriday.PNG" alt="Meshtastic Friday">
-<br></p>
+        <h2 id="join-the-group">How can I join the group?</h2>
+        <p>You can <a href="mailto:info@austinmesh.org">email us</a> to become an official member and attend our in-person meetings in Austin. You can also follow us on <a href="https://twitter.com/AustinMeshOrg">Twitter</a>,
+            <a href="https://www.instagram.com/p/Cq0jOpYLpZy/">Instagram</a>,
+            <a href="https://www.tiktok.com/@austinmesh.org">TikTok</a>,
+            <a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA">YouTube</a>, and <a href="https://discord.gg/c8tph2HX">Discord</a>.</p>
 
+        <h2 id="building-a-solar-powered-repeater">Building a Solar-Powered Repeater</h2>
+        <p>We have tried 5 permutations of solar powering nodes:</p>
+        <p><strong>Version 1.0:</strong> Using RAK RAKBox-B2 Enclosure with solar panel. The panel was connected directly to the RAK Wireless WisBlock Meshtastic Starter Kit US915. We connected a 2000 MAh Lithium Polymer battery directly to the RAK board. We drilled a hole in the top of the box and attached a fiberglass antenna, which was connected to the RAK board with an iPEX to N-Type connector. We mounted this on top of one of the UT buildings and it died within a month. The 0.4 watt panel is way too small.</p>
+        <p><strong>Version 2.0:</strong> Same as 1.0 but we added a second 5 watt solar panel that was connected to the RAK board via USB. Also died within a month.</p>
+        <p><strong>Version 3.0:</strong> To minimize the amount of components outside the box we used a much larger box with a clear lid and placed the solar panel inside the box. We added a Texas Instruments Green Power Module between the solar panel and the RAK board to help regulate the power. For batteries we switched to using four 18650 batteries and we also added an overdischarge protection circuit from Voltaic Enclosures (not to be confused with Voltaic Systems) between the battery and the RAK board to provide clean shutoff when battery voltage fell below 2.5v. We mounted this on top of the UT buildings and it died in 3 months.</p>
+        <p><strong>Version 4.0:</strong> Same as Version 3.0 but we mounted the solar panel outside of the box (using a smaller box). We mounted this on a pole and it died within 3 months.</p>
+        <p><strong>Version 5.0:</strong> For this version we stopped using the RAK’s solar and battery connectors entirely. Instead we connected a large 12 watt solar panel to a Voltaic Systems battery via USB and then connected the battery to the RAK board via USB. The Voltaic Systems battery acts as the solar charge controller and also acts as the overdischarge protection circuit; the battery will charge at a range of voltages from the solar panel (if it gets shaded) and the battery will shut off if the voltages drops too low and will reboot itself once it has recharged sufficiently.</p>
 
-<h3>Comparing it to APRS on Ham Radio</h3>
-<p>
-For people who are familiar with using the <a href="https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System">Automatic Packet Reporting System (APRS) </a> on ham radio, Meshtastic is similar in a few ways:
-<br>
-<b>Digipeaters: </b>APRS radios can be set up as clients, which receive all messages and only transmit the users messages, or APRS radios can be set up as digipeaters, which repeat all the messages they hear. Meshtastic radios by default all act as repeaters – just like APRS digipeaters.
-<br>
-<b>iGates: </b>MQTT Gateways are like APRS iGates – they repeat all local traffic over the internet to other MQTT Gateways around the world.
-<br>
-<b>ANSRVR: </b>APRS users can subscribe to groups using the ANSRVR service. This allows for group chats like the popular #APRSThursday net. Meshtastic has “Secondary Channels” that can be subscribe to, allowing users to send messages to everyone on the channel.
-<br>
-<b>Burst Communication: </b>APRS uses the AX.25 protocol which sends messages using data bursts between 0.3 and 0.5 seconds long. Meshtastic uses the LoRa protocol which sends messages in data bursts between 0.5 and 10 seconds long.
-<br>
-<br>
-But Meshtastic is also different than APRS in a few ways:
-<br>
-<b>Primary Channel: </b>APRS doesn’t have a way to broadcast a message to everyone on the network. Messages sent to Meshtastic's Primary Channel go to everyone.
-<br>
-<b>Encryption: </b>APRS is unencrypted because it is illegal to use encryption over ham radio. Meshtastic is encrypted for communications on private group channels and for direct messages between users, because it runs on the 900 MHz ISM band, which does not have restrictions on encryption.
-<br>
-<b>License: </b>APRS requires the user to have a ham radio license. Meshtastic does not require any license and is open for anyone to use.
-<br>
-<b>Equipment Cost: </b>APRS capable handheld ham radios cost upwards of $400. Meshtastic radios cost less than $100.
-<br>
-<b>Email and SMS: </b>APRS has services which allow users to send emails and SMS text messages to people who aren’t ham radio users. Meshtastic does not have this feature but it could be added in the future.
-<br>
-<b>Simplicity: </b>APRS is quite a bit more difficult to use than Meshtastic. APRS does not have any standardized user interface – there are dozens of software packages available. Meshtastic has a standardized iPhone and Android app which is easy to understand for new users.
-<br>
-<br>
+        <h3>Lessons learned:</h3>
+        <ol>
+            <li>Don’t trust the RAK board to handle varying solar voltage or varying battery voltage. It is very unhappy if either voltage goes outside of a narrow range. In fact there is a <a href="https://meshtastic.discourse.group/t/rak-4631-solar-repeater/7694/7">known issue</a> where the Nordic nRF52840 module inside of the RAK 4631 chip causes it to enter a “Super Deep Sleep” fault state when it is supplied with 3.3V. This means when the battery voltage falls too low the RAK chip shuts down and can only be rebooted manually.</li>
+            <li>Solar panels: bigger is better. 10 watts or more is ideal.</li>
+            <li>Battery: bigger is better. 10,000 mAh or more is ideal.</li>
+            <li>Antenna: fiberglass antennas are the most robust and can handle wind, rain, and UV light better than rubber ducky antennas.</li>
+            <li>Heat can kill the battery – it is best to shade the box containing the battery.</li>
+            <li>Don’t add any modules. The GPS module increases battery usage significantly and is unnecessary if the repeater is in a fixed position.</li>
+            <li>Seal everything properly and make sure water has a way to get out of the case. Use o-rings for the antenna mount and wrap connectors in proxicast. Add a drain plug to the case so any condensation has a way to escape. For high humidity environments, spray the electronics with conformal coating.</li>
+        </ol>
+        <p>These are lessons learned from Austin Texas, where the main environmental stressors are heat and thunderstorms. In the summer of 2023 we 80 days over 100° F (38°C) and we had a stretch of 11 days over 105° F (40.5°C), during which two radios died. We also can have both high humidity and high temperature at the same time in Austin; in the summer the weather would swing from 80° F (27°C) with 85% humidity in the morning to 105° F (38°C) with 25% humidity in the afternoon. <a href="https://weatherspark.com/h/y/8004/2023/Historical-Weather-during-2023-in-Austin-Texas-United-States">Weather history here.</a> Our learnings are probably applicable to other southern and desert climates.</p>
 
+        <h3>Considerations for other climates</h3>
+        <ol>
+            <li>Northern Climates: At higher latitudes there is much less sunshine in the winter. A larger solar panel would be necessary and angling the panel lower to the horizon would be beneficial. The rule of thumb is to angle the solar panels at the same degree as your latitude. In Austin our panels should be angled at 30° but in Calgary the optimal angle would be 50°. Batteries should also be bigger in colder climates as low temperatures reduce their performance.</li>
+            <li>Coastal Climates: salt spray and condensation from fog can kill electronics quickly. In coastal climates it is best to spray the electronics with conformal coating.</li>
+        </ol>
 
-<h3>Other Meshes</h3>
-<p>
-For people in other places we've see a number of other meshtastic clubs spring up::
-<br>Birmingham, Alabama: <a href="http://birminghammesh.org/">Birmingham Mesh</a>
-<br>Calgary, Alberta: <a href="https://yycmesh.com">YYC Mesh</a>
-<br>Charlotte, North Carolina: <a href="https://charlottemesh.org/">Charlotte Mesh</a>
-<br>Philadelphia, Pennsylvania: <a href="https://iffybooks.net/">Iffy Books is leading the effort</a>
-<br>Denver, Colorado: <a href="https://denvermesh.org/">Denver Mesh</a>
-<br>Hawaii: <a href="https://www.hawaiimesh.net/">Hawaii Mesh</a>
-<br>Nashville, Tennessee: <a href="https://www.instagram.com/meshville.tn">Meshville</a>
-<br>Orange County, California: <a href="https://lagunamesh.com/">Laguna Mesh</a>
-<br>Philadelphia, Pennsylvania: <a href="https://iffybooks.net/">Iffy Books is leading the effort</a>
+        <h3 id="parts-list">Parts List</h3>
+        <p>With all that said, here is the parts list for our most-preferred way to build a solar powered repeater. This design doesn’t require any soldering or complicated connectors. It also doesn’t require any battery management chips (which often have long shipping lead times and can be hard to get). For this design the solar panel is connected directly to the battery pack via USB. Then the battery pack is connected to the board via USB. The Voltaic Systems V75 battery is nice because it is optimized to charge from a solar panel and it is set standard to an “always on” mode which means the battery bank does not shut off after a set amount of time like other battery packs – this is useful as the RAK chip uses very little power and can trick other battery packs into shutting off. The other really nice thing about the Voltaic pack is than when it drains down completely it shuts down, but then once the solar panel has sufficiently charged it back up it will automatically turn itself back on again. The RAK radio uses between 100 and 1000 mAh per day, with about 400 mAh per day being average so theoretically the 19,200mAh Voltaic V75 could keep the radio running for 48 days without solar.</p>
 
-<br>
-<br>For anyone trying to start a similar club, here's what we've found to work:
-<br>1) The hardest part of setting up a mesh network is organizing people. For a mesh to work well you need a lot of people working to set up nodes around town. Finding these people is harder than putting together hardware.
-<br>2) Have regular meetings - we try to have meetings once per quarter. Sometimes we have nearly a dozen people and sometimes it's just 2 or 3 of us meeting up at the pub. But having regular meetings means people can feel confident that if they miss a meeting there will be another one soon.
-<br>3) Create an email list and make sure to add anyone who is interested in the club - this is the easiest way to organize meetings.
-<br>4) Set up social media accounts and advertise your meetings and talk about your achievements. When you get a solar power node set up be sure to talk about it!
-<br>5) Connect with your local ham radio club - they're very knowledgable about radio and they often have access to towers and rooftops.
-<br>6) Connect with your local disaster relief agency, red cross, or mutual aid group - they are also often willing to put up repeaters on their buildings.
-<br>
-<br>Our website content is licensed under Creative Commons - feel free to use if for your club's website: <a href="https://github.com/willmartindotcom/austinmesh">Github</a>
-<br>If we've inspired you, please <a href="mailto:info@austinmesh.org">email us</a>!
-<br>
-</p>
-<p>This site is (c) by Will Martin and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Product Name</th>
+                        <th>Cost</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Solar Panel</td>
+                        <td>Soshine 12W</td>
+                        <td>$30</td>
+                        <td><a href="https://www.amazon.com/Voltaic-Systems-Always-External-Battery/dp/B084BPSFKH">Amazon</a> or <a href="https://www.aliexpress.us/item/3256805874482226.html">AliExpress</a></td>
+                    </tr>
+                    <tr>
+                        <td>Battery</td>
+                        <td>Voltaic Systems V75</td>
+                        <td>$79</td>
+                        <td><a href="https://www.amazon.com/Voltaic-Systems-Always-External-Battery/dp/B084BPSFKH">Amazon</a> or <a href="https://voltaicsystems.com/v75">Volatic Systems</a></td>
+                    </tr>
+                    <tr>
+                        <td>Rak Board</td>
+                        <td>RAK Meshtastic Kit</td>
+                        <td>$35</td>
+                        <td><a href="https://store.rokland.com/products/rak-wireless-wisblock-meshtastic-starter-kit">Rokland</a></td>
+                    </tr>
+                    <tr>
+                        <td>Antenna Connector</td>
+                        <td>IPEX to N Type Female</td>
+                        <td>$4</td>
+                        <td><a href="https://www.amazon.com/gp/product/B09N3LPBYB">Amazon</a></td>
+                    </tr>
+                    <tr>
+                        <td>Antenna</td>
+                        <td>915 MHz 3 dBi N-Female</td>
+                        <td>$18</td>
+                        <td><a href="https://store.rokland.com/collections/802-11ah-wi-fi-halow/products/3-dbi-rak-brand-fiberglass-outdoor-antenna-bracket-mount-for-rak-bobcat-sensecap">Rokland</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Box</td>
+                        <td>ABS Box with mounting tabs, 158mm x 90mm x 46mm</td>
+                        <td>$10</td>
+                        <td><a href="https://www.amazon.com/dp/B07NSSJ4H1/">Amazon</a> or <a href="https://www.aliexpress.us/item/3256803025946686.html">AliExpress</a></td>
+                    </tr>
+                    <tr>
+                        <td>Drain Plug</td>
+                        <td>VENT-PS1YBK-N8001</td>
+                        <td>$3</td>
+                        <td><a href="https://www.mouser.com/ProductDetail/Amphenol-LTW/VENT-PS1YBK-N8001?qs=5aG0NVq1C4wAxWre7fChJA%3D%3D">Mouser</a></td>
+                    </tr>
+                    <tr>
+                        <td>USB Cable Pass-Through</td>
+                        <td>3/4 NPT Cable Gland</td>
+                        <td>$2</td>
+                        <td><a href="https://www.amazon.com/gp/product/B07ZRHPRP7">Amazon</a></td>
+                    </tr>
+                    <tr>
+                        <td>Antenna Wrap</td>
+                        <td>Proxicast</td>
+                        <td>$2</td>
+                        <td><a href="https://www.amazon.com/gp/product/B00K5GW67O/">Amazon</a></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><strong>$183</strong></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>To turn this repeater into a solar-powered meshtastic birdhouse you can just add the following components. Simply paint the top of the birdhouse black and glue on the solar panel, cut a hole in the back of the birdhouse big enough to put the box into it, attach the antenna mount L-Bracket to the side of the birdhouse, and connect the box to the antenna on the mount with the pigtail using the jam nut.</p>
 
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Product Name</th>
+                        <th>Cost</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Birdhouse</td>
+                        <td>Birdhouse</td>
+                        <td>$25</td>
+                        <td><a href="https://www.amazon.com/dp/B08T92JBCK">Amazon</a></td>
+                    </tr>
+                    <tr>
+                        <td>Pigtail Cable</td>
+                        <td>Pigtail Cable</td>
+                        <td>$10</td>
+                        <td><a href="https://www.amazon.com/gp/product/B09D3H19WF/">Amazon</a></td>
+                    </tr>
+                    <tr>
+                        <td>Jam Nut</td>
+                        <td>Jam Nut</td>
+                        <td>$12</td>
+                        <td><a href="https://www.amazon.com/dp/B08VCJXMXW">Amazon</a></td>
+                    </tr>
+                    <tr>
+                        <td>Antenna Bracket</td>
+                        <td>Larsen Mobile Antenna Mounts TMB58B</td>
+                        <td>$15</td>
+                        <td><a href="https://www.dxengineering.com/parts/lsn-tmb58b">DX Engineering</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2 id="meshtastic-friday">Meshtastic Friday</h2>
+        <p>Austin Mesh created a weekly check-in called Meshtastic Friday. Join us every Friday for the weekly check in.</p>
+        <p><strong>When:</strong> Every Friday from 00:00 UTC to 23:59 UTC, but shoot for 16:00 UTC: 8 AM San Francisco / 9 AM Denver / 10 AM Austin / 11 AM New York / 4 PM London / 5 PM Berlin / 11 PM Singapore</p>
+        <p><strong>Where:</strong> On the Meshtastic Primary Channel (0). Either through your local Meshtastic network or via the default app settings for MQTT (mqtt.Meshtastic.org / root topic msh)</p>
+        <p><strong>How:</strong> Simply send any message to the primary channel using Meshtastic.</p>
+        <p><strong>Who:</strong> All Meshtastic users anywhere on earth!</p>
+        <p><strong>Why:</strong> Increase Meshtastic adoption by using it regularly. Stress test the network to improve it. Improve your familiarity with Meshtastic. Meet like-minded people from around the world.</p>
+        <img src="meshtasticfriday.PNG" alt="Meshtastic Friday">
+
+        <h2 id="meshtastic-vs-aprs">Comparing it to APRS on Ham Radio</h2>
+        <p>For people who are familiar with using the <a href="https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System">Automatic Packet Reporting System (APRS) </a> on ham radio, Meshtastic is <strong>similar</strong> in a few ways:</p>
+        <h3>Similarities</h3>
+        <dl>
+            <dt>Digipeaters</dt>
+            <dd>APRS radios can be set up as clients, which receive all messages and only transmit the users messages, or APRS radios can be set up as digipeaters, which repeat all the messages they hear. Meshtastic radios by default all act as repeaters – just like APRS digipeaters.</dd>
+            <dt>iGates</dt>
+            <dd>MQTT Gateways are like APRS iGates – they repeat all local traffic over the internet to other MQTT Gateways around the world.</dd>
+            <dt>ANSRVR</dt>
+            <dd>APRS users can subscribe to groups using the ANSRVR service. This allows for group chats like the popular #APRSThursday net. Meshtastic has “Secondary Channels” that can be subscribe to, allowing users to send messages to everyone on the channel.</dd>
+            <dt>Burst</dt>
+            <dd>APRS uses the AX.25 protocol which sends messages using data bursts between 0.3 and 0.5 seconds long. Meshtastic uses the LoRa protocol which sends messages in data bursts between 0.5 and 10 seconds long.</dd>
+        </dl>
+
+        <h3>Differences</h3>
+        <p>But Meshtastic is also <strong>different</strong> than APRS in a few ways:</p>
+        <dl>
+            <dt>Primary</dt>
+            <dd>APRS doesn’t have a way to broadcast a message to everyone on the network. Messages sent to Meshtastic's Primary Channel go to everyone.</dd>
+            <dt>Encryption</dt>
+            <dd>APRS is unencrypted because it is illegal to use encryption over ham radio. Meshtastic is encrypted for communications on private group channels and for direct messages between users, because it runs on the 900 MHz ISM band, which does not have restrictions on encryption.</dd>
+            <dt>License</dt>
+            <dd>APRS requires the user to have a ham radio license. Meshtastic does not require any license and is open for anyone to use.</dd>
+            <dt>Equipment Cost</dt>
+            <dd>APRS capable handheld ham radios cost upwards of $400. Meshtastic radios cost less than $100.</dd>
+            <dt>Email</dt>
+            <dd>APRS has services which allow users to send emails and SMS text messages to people who aren’t ham radio users. Meshtastic does not have this feature but it could be added in the future.</dd>
+            <dt>Simplicity</dt>
+            <dd>APRS is quite a bit more difficult to use than Meshtastic. APRS does not have any standardized user interface – there are dozens of software packages available. Meshtastic has a standardized iPhone and Android app which is easy to understand for new users.</dd>
+        </dl>
+        <h2 id="other-meshes">Other Meshes</h2>
+        <p>
+            For people in other places we've see a number of other meshtastic clubs spring up::
+            <br>Birmingham, Alabama: <a href="http://birminghammesh.org/">Birmingham Mesh</a>
+            <br>Calgary, Alberta: <a href="https://yycmesh.com">YYC Mesh</a>
+            <br>Charlotte, North Carolina: <a href="https://charlottemesh.org/">Charlotte Mesh</a>
+            <br>Philadelphia, Pennsylvania: <a href="https://iffybooks.net/">Iffy Books is leading the effort</a>
+            <br>Denver, Colorado: <a href="https://denvermesh.org/">Denver Mesh</a>
+            <br>Hawaii: <a href="https://www.hawaiimesh.net/">Hawaii Mesh</a>
+            <br>Nashville, Tennessee: <a href="https://www.instagram.com/meshville.tn">Meshville</a>
+            <br>Orange County, California: <a href="https://lagunamesh.com/">Laguna Mesh</a>
+            <br>Philadelphia, Pennsylvania: <a href="https://iffybooks.net/">Iffy Books is leading the effort</a>
+        </p>
+
+        <h3>Starting a similar club</h3>
+        <p>For anyone trying to start a similar club, here's what we've found to work:</p>
+        <ol>
+            <li>The hardest part of setting up a mesh network is organizing people. For a mesh to work well you need a lot of people working to set up nodes around town. Finding these people is harder than putting together hardware.</li>
+            <li>Have regular meetings - we try to have meetings once per quarter. Sometimes we have nearly a dozen people and sometimes it's just 2 or 3 of us meeting up at the pub. But having regular meetings means people can feel confident that if they miss a meeting there will be another one soon.</li>
+            <li>Create an email list and make sure to add anyone who is interested in the club - this is the easiest way to organize meetings.</li>
+            <li>Set up social media accounts and advertise your meetings and talk about your achievements. When you get a solar power node set up be sure to talk about it!</li>
+            <li>Connect with your local ham radio club - they're very knowledgable about radio and they often have access to towers and rooftops.</li>
+            <li>Connect with your local disaster relief agency, red cross, or mutual aid group - they are also often willing to put up repeaters on their buildings.</li>
+        </ol>
+        <p>Our website content is licensed under Creative Commons - feel free to use if for your club's website: <a href="https://github.com/willmartindotcom/austinmesh">Github</a>
+            <br>If we've inspired you, please <a href="mailto:info@austinmesh.org">email us</a>!
+            <br>
+        </p>
+        <p>This site is (c) by Will Martin and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</p>
     </main>
+    <!--
+        This script adds heading hashes to the url as the user scrolls
+        so that links to specific sections can be shared easily
+    -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const headings = Array.from(document.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]'));
+
+          const onScroll = () => {
+            let currentId = '';
+            for (let i = 0; i < headings.length; i++) {
+              const heading = headings[i];
+              const headingTop = heading.getBoundingClientRect().top;
+              if (headingTop >= 0 && headingTop < window.innerHeight) {
+                currentId = heading.id;
+                break;
+              }
+            }
+            if (currentId) history.replaceState(null, null, '#' + currentId);
+          };
+
+          window.addEventListener('scroll', onScroll);
+        });
+    </script>
 </body>
 </html>
