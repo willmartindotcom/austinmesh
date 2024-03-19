@@ -68,6 +68,28 @@
     <main>
         <p>Austin Mesh is a community group working to build a mesh network of solar-powered <a href="https://meshtastic.org/">meshtastic</a> radios in Austin. This network acts like a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network. All of this happens without any external infrastructure - no power, no cell phone towers, no internet.</p>
 
+        <ul>
+            <li><a href="#how-does-it-work">How does it work?</a></li>
+            <li><a href="#eli5">Can you explain it like I'm 5?</a></li>
+            <li><a href="#what-can-it-do">What can it do?</a></li>
+            <li><a href="#why-build-network">Why build this network?</a></li>
+            <li><a href="#coverage">What kind of coverage does the mesh network have?</a></li>
+            <li><a href="#join-the-network">How can I join the network</a></li>
+            <li><a href="#join-the-group">How can I join the group?</a></li>
+            <li><a href="#building-a-solar-powered-repeater">Building a solar-powered repeater</a>
+                <ul>
+                    <li><a href="#parts-list">Parts list</a></li>
+                </ul>
+            </li>
+            <li><a href="#meshtastic-friday">Meshtastic Friday</a></li>
+            <li><a href="#meshtastic-vs-aprs">Comparing it to APRS on Ham Radio</a></li>
+            <li><a href="#other-meshes">Other Meshses</a>
+                <ul>
+                    <li><a href="#start-a-similar-club">Starting a similar club</a></li>
+                </ul>
+            </li>
+        </ul>
+
         <h2 id="how-does-it-work">How does it work?</h2>
         <p>We have set up a number of solar-powered radio repeaters in Austin. These radios communicate on the <a href="https://en.wikipedia.org/wiki/33-centimeter_band">906.875 MHZ</a> frequency using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>. The radios mesh using the open-source <a href="https://meshtastic.org/">Meshtastic</a> software. Users can connect to these repeaters by Bluetooth if they’re close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.
             <br></p>
@@ -283,7 +305,6 @@
         <p><strong>How:</strong> Simply send any message to the primary channel using Meshtastic.</p>
         <p><strong>Who:</strong> All Meshtastic users anywhere on earth!</p>
         <p><strong>Why:</strong> Increase Meshtastic adoption by using it regularly. Stress test the network to improve it. Improve your familiarity with Meshtastic. Meet like-minded people from around the world.</p>
-        <img src="meshtasticfriday.PNG" alt="Meshtastic Friday">
 
         <h2 id="meshtastic-vs-aprs">Comparing it to APRS on Ham Radio</h2>
         <p>For people who are familiar with using the <a href="https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System">Automatic Packet Reporting System (APRS) </a> on ham radio, Meshtastic is <strong>similar</strong> in a few ways:</p>
@@ -329,7 +350,7 @@
             <br>Philadelphia, Pennsylvania: <a href="https://iffybooks.net/">Iffy Books is leading the effort</a>
         </p>
 
-        <h3>Starting a similar club</h3>
+        <h3 id="start-a-similar-club">Starting a similar club</h3>
         <p>For anyone trying to start a similar club, here's what we've found to work:</p>
         <ol>
             <li>The hardest part of setting up a mesh network is organizing people. For a mesh to work well you need a lot of people working to set up nodes around town. Finding these people is harder than putting together hardware.</li>
