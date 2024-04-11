@@ -99,8 +99,15 @@
             margin: 20px 0;
             background: var(--color-canvasDark) url("meshtastic-m-powered-small.png") no-repeat;
             background-position-x: right 20px;
-            background-position-y: 50%;
-            background-size: 80px;
+            background-position-y: top 20px;
+            background-size: 50px;
+        }
+
+        @media only screen and (min-width: 720px) {
+            .meetup {
+                background-size: 80px;
+                background-position-y: 50%;
+            }
         }
         .meetup h4 {
             margin: 0 0 10px;
