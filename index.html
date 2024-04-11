@@ -5,10 +5,20 @@
     <title>Austin Mesh</title>
     <meta name="viewport" meta charset="utf-8" content="width=device-width, initial-scale=1.0">
     <style>
+        :root {
+            --color-canvas: #fcfcfc;
+            --color-canvasText: #2C2D3C;
+        }
+        @media (prefers-color-scheme: dark) {
+          :root {
+            --color-canvas: #2C2D3C;
+            --color-canvasText: #fff;
+          }
+        }
         body {
-            background-color: Canvas;
+            background-color: var(--color-canvas);
             color-scheme: light dark;
-            color: CanvasText;
+            color: var(--color-canvasText);
             font-family: Arial, sans-serif;
             font-size: 18px;
             margin: 0;
