@@ -101,19 +101,10 @@
             padding: 10px 10px;
         }
         .meetup {
+            position: relative;
             padding: 20px;
             margin: 20px 0;
-            background: var(--color-canvasDark) url("meshtastic-m-powered.svg") no-repeat;
-            background-position-x: right 20px;
-            background-position-y: top 20px;
-            background-size: 50px;
-        }
-
-        @media only screen and (min-width: 720px) {
-            .meetup {
-                background-size: 80px;
-                background-position-y: 50%;
-            }
+            background-color: var(--color-canvasDark);
         }
         .meetup h4 {
             margin: 0 0 10px;
@@ -121,6 +112,18 @@
         .meetup p {
             font-size: 16px;
             margin-bottom: 0;
+        }
+        .meetup .mpowered {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 50px;
+        }
+        @media only screen and (min-width: 720px) {
+            .meetup .mpowered {
+                width: 80px;
+                top: calc(50% - 38px);
+            }
         }
     </style>
 </head>
@@ -136,6 +139,7 @@
             <p><strong>When</strong>: Thursday, June 6th @6pm<br />
             <strong>Where</strong>: <a href="https://maps.app.goo.gl/mLidvbyoTRCYXaPdA" target="_blank">Black Sheep Lodge, S Lamar</a><br />
             <strong>RSVP</strong>: <a href="https://discord.gg/9bCArDRkHr?event=1228175954426331267" target="_blank">Discord</a></p>
+            <img src="meshtastic-m-powered.svg" alt="Meshtastic M Powered Logo" class="mpowered" />
         </div>
 
         <p>Austin Mesh is a community group working to build a mesh network of solar-powered <a href="https://meshtastic.org/">meshtastic</a> radios in Austin. This network acts like a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network. All of this happens without any external infrastructure - no power, no cell phone towers, no internet.</p>
