@@ -6,28 +6,30 @@
     <meta name="viewport" meta charset="utf-8" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
+            --borderRadius: 4px;
             --color-canvas: #fcfcfc;
+            --color-canvasBorder: #565764;
+            --color-canvasDark: #e3e3e3;
+            --color-canvasDarker: #cacaca;
             --color-canvasText: #2C2D3C;
             --color-canvasTextDark: #107633;
             --color-canvasTextDarker: #062c13;
-            --color-canvasDark: #e3e3e3;
-            --color-canvasDarker: #cacaca;
             --color-primary: #67EA94;
             --color-primaryDark: #2ce26a;
         }
         @media (prefers-color-scheme: dark) {
           :root {
             --color-canvas: #2C2D3C;
-            --color-canvasText: #fff;
-            --color-canvasDark: #282836;
+            --color-canvasDark: #262736;
             --color-canvasDarker: #232430;
+            --color-canvasText: #fff;
           }
         }
         body {
             background-color: var(--color-canvas);
             color-scheme: light dark;
             color: var(--color-canvasText);
-            font-family: Arial, sans-serif;
+            font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
             font-size: 18px;
             margin: 0;
             padding: 0;
@@ -43,25 +45,35 @@
             max-width: 700px;
             padding: 10px;
         }
+        h1 {
+            font-size: 36.49px;
+        }
         h2 {
-            border-top: 1px solid ButtonBorder;
+            border-top: 1px solid var(--color-canvasBorder);
+            font-size: 32.44px;
             margin-top: 36px;
             padding-top: 18px;
         }
         h3 {
-            font-size: 24px;
+            font-size: 28.83px;
         }
         h4 {
-            font-size: 22px;
+            font-size: 25.63px;
             margin-bottom: 10px;
         }
         h5 {
-            font-size: 18px;
+            font-size: 22.78px;
             margin-bottom: 5px;
+        }
+        h6 {
+            font-size: 20.25px;
         }
         p {
             line-height: 1.5;
             margin: 0 0 20px 0;
+        }
+        small {
+            font-size: 16px;
         }
         a,
         a:visited {
@@ -95,10 +107,14 @@
             content: "⫻";
         }
         li {
-            margin-bottom: 5px;
+            margin: 12px 0;
         }
         dt {
             font-weight: bold;
+            margin-top: 8px;
+            margin-bottom: 4px;
+        }
+        dd {
         }
         img {
             max-width: 100%;
@@ -112,7 +128,7 @@
             width: 100%;
         }
         tr {
-            border-bottom: 1px solid ButtonBorder;
+            border-bottom: 1px solid var(--color-canvasBorder);
         }
         tbody tr:last-child {
             border-bottom: 0 none;
@@ -123,11 +139,18 @@
         td, th {
             padding: 10px 10px;
         }
+        .toc li {
+            margin: 8px 0 0;
+        }
+        .toc > li + li {
+            margin-top: 18px;
+        }
         .meetup {
             position: relative;
             padding: 20px;
             margin: 20px 0;
             background-color: var(--color-canvasDark);
+            border-radius: var(--borderRadius);
         }
         .meetup h4 {
             margin: 0 0 10px;
@@ -167,7 +190,7 @@
 
         <p>Austin Mesh is a community group working to build a mesh network of solar-powered <a href="https://meshtastic.org/">meshtastic</a> radios in Austin. This network acts like a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network. All of this happens without any external infrastructure - no power, no cell phone towers, no internet.</p>
 
-        <ul>
+        <ul class="toc">
             <li><a href="#how-does-it-work">How does it work?</a>
                 <ul>
                     <li><a href="#eli5">Can you explain it like I'm 5?</a></li>
@@ -261,16 +284,12 @@
 
         <h3 id="best-practices">Best practices</h3>
         <h4>TL;DR;</h4>
-        <dl>
-            <dt>MQTT</dt>
-            <dd>Disabled;Ignore;</dd>
-            <dt>Role</dt>
-            <dd>Client (<strong>NOT</strong> Router & Client)</dd>
-            <dt>Hop Count</dt>
-            <dd>3</dd>
-            <dt>Broadcast intervals(info, position, telemetry)</dt>
-            <dd>1 hour</dd>
-        </dl>
+        <ul>
+            <li><strong>MQTT</strong>: Disabled;Ignore;</li>
+            <li><strong>Role</strong>: Client (<strong>NOT</strong> Router & Client)</li>
+            <li><strong>Hop Count</strong>: 3</li>
+            <li><strong>Broadcast intervals</strong>(info, position, telemetry): 1 hour</li>
+        </ul>
         <p>This is a community driven project, following these guidelines will ensure the best experience for everyone as we continue to grow. (credit @Nick, @AdvJosh (TEX#) - KJ5FZD, @edsai KI5OSB)</p>
 
         <h4>MQTT</h4>
