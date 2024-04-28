@@ -80,7 +80,19 @@
             }
         }
         ul {
+            list-style-type: none;
             margin-top: 5px;
+            padding-left: 20px;
+        }
+        ul li::before {
+            content: "／";
+            margin-right: 8px;
+        }
+        ul ul li::before {
+            content: "⫽";
+        }
+        ul ul ul li::before {
+            content: "⫻";
         }
         li {
             margin-bottom: 5px;
