@@ -364,11 +364,26 @@
 
         <h2 id="building-a-solar-powered-repeater">Building a Solar-Powered Repeater</h2>
         <p>We have tried 5 permutations of solar powering nodes:</p>
-        <p><strong>Version 1.0:</strong> Using RAK RAKBox-B2 Enclosure with solar panel. The panel was connected directly to the RAK Wireless WisBlock Meshtastic Starter Kit US915. We connected a 2000 MAh Lithium Polymer battery directly to the RAK board. We drilled a hole in the top of the box and attached a fiberglass antenna, which was connected to the RAK board with an iPEX to N-Type connector. We mounted this on top of one of the UT buildings and it died within a month. The 0.4 watt panel is way too small.</p>
-        <p><strong>Version 2.0:</strong> Same as 1.0 but we added a second 5 watt solar panel that was connected to the RAK board via USB. Also died within a month.</p>
-        <p><strong>Version 3.0:</strong> To minimize the amount of components outside the box we used a much larger box with a clear lid and placed the solar panel inside the box. We added a Texas Instruments Green Power Module between the solar panel and the RAK board to help regulate the power. For batteries we switched to using four 18650 batteries and we also added an overdischarge protection circuit from Voltaic Enclosures (not to be confused with Voltaic Systems) between the battery and the RAK board to provide clean shutoff when battery voltage fell below 2.5v. We mounted this on top of the UT buildings and it died in 3 months.</p>
-        <p><strong>Version 4.0:</strong> Same as Version 3.0 but we mounted the solar panel outside of the box (using a smaller box). We mounted this on a pole and it died within 3 months.</p>
-        <p><strong>Version 5.0:</strong> For this version we stopped using the RAK’s solar and battery connectors entirely. Instead we connected a large 12 watt solar panel to a Voltaic Systems battery via USB and then connected the battery to the RAK board via USB. The Voltaic Systems battery acts as the solar charge controller and also acts as the overdischarge protection circuit; the battery will charge at a range of voltages from the solar panel (if it gets shaded) and the battery will shut off if the voltages drops too low and will reboot itself once it has recharged sufficiently.</p>
+        <details>
+            <summary>Version 1.0 RAKBox-B2 2000mah LiPo</summary>
+            <p>Using RAK RAKBox-B2 Enclosure with solar panel. The panel was connected directly to the RAK Wireless WisBlock Meshtastic Starter Kit US915. We connected a 2000 MAh Lithium Polymer battery directly to the RAK board. We drilled a hole in the top of the box and attached a fiberglass antenna, which was connected to the RAK board with an iPEX to N-Type connector. We mounted this on top of one of the UT buildings and it died within a month. The 0.4 watt panel is way too small.</p>
+        </details>
+        <details>
+            <summary>Version 2.0 USB Solar</summary>
+            <p>Same as 1.0 but we added a second 5 watt solar panel that was connected to the RAK board via USB. Also died within a month.</p>
+        </details>
+        <details>
+            <summary>Version 3.0 Internal Solar, Power Module, 18650's</summary>
+            <p>To minimize the amount of components outside the box we used a much larger box with a clear lid and placed the solar panel inside the box. We added a Texas Instruments Green Power Module between the solar panel and the RAK board to help regulate the power. For batteries we switched to using four 18650 batteries and we also added an overdischarge protection circuit from Voltaic Enclosures (not to be confused with Voltaic Systems) between the battery and the RAK board to provide clean shutoff when battery voltage fell below 2.5v. We mounted this on top of the UT buildings and it died in 3 months.</p>
+        </details>
+        <details>
+            <summary>Version 4.0 External Solar</summary>
+            <p>Same as Version 3.0 but we mounted the solar panel outside of the box (using a smaller box). We mounted this on a pole and it died within 3 months.</p>
+        </details>
+        <details open>
+            <summary>Version 5.0 (Currently running)</summary>
+            <p>For this version we stopped using the RAK’s solar and battery connectors entirely. Instead we connected a large 12 watt solar panel to a Voltaic Systems battery via USB and then connected the battery to the RAK board via USB. The Voltaic Systems battery acts as the solar charge controller and also acts as the overdischarge protection circuit; the battery will charge at a range of voltages from the solar panel (if it gets shaded) and the battery will shut off if the voltages drops too low and will reboot itself once it has recharged sufficiently.</p>
+        </details>
 
         <h3>Lessons learned:</h3>
         <ol>
@@ -381,6 +396,10 @@
             <li>Seal everything properly and make sure water has a way to get out of the case. Use o-rings for the antenna mount and wrap connectors in proxicast. Add a drain plug to the case so any condensation has a way to escape. For high humidity environments, spray the electronics with conformal coating.</li>
         </ol>
         <p>These are lessons learned from Austin Texas, where the main environmental stressors are heat and thunderstorms. In the summer of 2023 we 80 days over 100° F (38°C) and we had a stretch of 11 days over 105° F (40.5°C), during which two radios died. We also can have both high humidity and high temperature at the same time in Austin; in the summer the weather would swing from 80° F (27°C) with 85% humidity in the morning to 105° F (38°C) with 25% humidity in the afternoon. <a href="https://weatherspark.com/h/y/8004/2023/Historical-Weather-during-2023-in-Austin-Texas-United-States">Weather history here.</a> Our learnings are probably applicable to other southern and desert climates.</p>
+        <details>
+            <summary>Details on the boards that died</summary>
+            <p>One was filled with water, the antenna seal didn't work. That's why the vent valve at the bottom is so important. One died because it got stuck in the low voltage state that requires a physical reset - that's fixed with the Voltaic packs. The third one died due to unknown causes but heat is suspected. When we tried to reboot with with wall power it wouldn't turn on - so the board was totally fried. That one I also sprayed with covalent coating nasty stuff that we won't use any more.</p>
+        </details>
 
         <h3>Considerations for other climates</h3>
         <ol>
