@@ -45,7 +45,7 @@
             text-align: center;
         }
         main {
-            margin: 40px auto;
+            margin: 0 auto 40px;
             max-width: 700px;
             padding: 10px;
         }
@@ -195,6 +195,24 @@
         .white-bg {
             background-color: #fff;
         }
+        .social {
+            margin: 20px 0 0;
+            text-align: center;
+        }
+        .social p {
+            display: none;
+        }
+        .social a {
+            padding: 0 10px;
+        }
+        @media only screen and (min-width: 720px) {
+            .social {
+                margin: 20px 0 20px;
+            }
+            .social p {
+                display: block;
+            }
+        }
     </style>
 </head>
 
@@ -204,6 +222,25 @@
     </header>
 
     <main>
+        <div class="social">
+            <p>Join us on</p>
+            <a href="https://www.instagram.com/p/Cq0jOpYLpZy/" target="_blank"><img src="images/social/instagram.svg" 
+                     title="Austin Mesh Instagram"
+                     alt="Instagram logo"
+                     width="40"
+                     height="40" /></a>
+            <a href="https://discord.gg/6a5Sv2s9bG" target="_blank"><img src="images/social/discord.svg" 
+                     title="Austin Mesh Discord"
+                     alt="Discord logo"
+                     width="40"
+                     height="40" /></a>
+            <a href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA"><img src="images/social/youtube.svg" 
+                     title="Austin Mesh YouTube Channel"
+                     alt="Youtube logo"
+                     width="40"
+                     height="40" /></a>
+        </div>
+
         <div class="meetup">
             <h4>Austin Mesh Meeting</h4>
             <p><strong>When</strong>: Thursday, June 6th @6pm<br />
