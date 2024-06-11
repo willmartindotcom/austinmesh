@@ -1,0 +1,88 @@
+:root {
+    --bg-default: #fcfcfc;
+    --color-canvasBorder: #565764;
+    --color-canvasDark: #e3e3e3;
+    --color-canvasDarker: #cacaca;
+    --color-canvasText: #2C2D3C;
+    --color-canvasTextDark: #107633;
+    --color-canvasTextDarker: #062c13;
+    --ly-brand: #67EA94;
+    --ly-bg-brand: #67EA94;
+    --color-primaryDark: #2ce26a;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-default: #2C2D3C;
+    --color-canvasDark: #1f2031;
+    --color-canvasDarker: #232430;
+    --color-canvasText: #fff;
+  }
+}
+header {
+    background-color: var(--ly-brand);
+    text-align: center;
+}
+header img {
+    max-width: calc(100% - 3rem);
+}
+main {
+    margin: 0 auto 40px;
+    max-width: 700px;
+}
+footer {
+    margin: 0 auto;
+    max-width: 700px;
+}
+.meetup {
+    position: relative;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: var(--bg-muted);
+}
+.meetup .mpowered {
+    display: none;
+}
+@media only screen and (min-width: 720px) {
+    .meetup .mpowered {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 96px;
+    }
+}
+.partner-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+.partner-heading {
+    align-items: center;
+    display: flex;
+    margin-top: 2rem;
+}
+.partner-heading img {
+    margin-left: 0;
+    margin-right: 10px;
+}
+.white-bg {
+    background-color: #fff;
+}
+.social {
+    margin: 20px 0 0;
+    text-align: center;
+}
+.social p {
+    display: none;
+}
+.social a {
+    padding: 0 10px;
+}
+@media only screen and (min-width: 720px) {
+    .social {
+        margin: 20px 0 20px;
+    }
+    .social p {
+        display: block;
+    }
+}
