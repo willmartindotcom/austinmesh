@@ -7,6 +7,8 @@
     --color-canvasTextDark: #107633;
     --color-canvasTextDarker: #062c13;
     --ly-brand: #67EA94;
+    --accent: #2ce26a;
+    --dark-accent: #67EA94;
     --ly-bg-brand: #67EA94;
     --color-primaryDark: #2ce26a;
 }
@@ -30,7 +32,7 @@ main {
     max-width: 700px;
 }
 footer {
-    margin: 0 auto;
+    margin: 0 auto !important;
     max-width: 700px;
 }
 .meetup {
