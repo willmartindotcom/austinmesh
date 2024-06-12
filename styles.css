@@ -30,7 +30,7 @@ main {
     max-width: 700px;
 }
 footer {
-    margin: 0 auto;
+    margin: 0 auto !important;
     max-width: 700px;
 }
 .meetup {
